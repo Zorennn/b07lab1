@@ -14,21 +14,21 @@ public class Polynomial {
 	}
 	
 	public Polynomial add(Polynomial poly) {
-		int larger = Math.max(this.coefficients.length, poly.coefficients.length);
+		int larger = Math.max(coefficients.length, poly.coefficients.length);
 		double [] co = new double[larger];
 		for (int i=0; i < poly.coefficients.length; i++) {
 			co[i] = poly.coefficients[i];
 		}
-		for (int i=0; i < this.coefficients.length; i++) {
-			co[i] += this.coefficients[i];
+		for (int i=0; i < coefficients.length; i++) {
+			co[i] += coefficients[i];
 		}
 		return new Polynomial(co);
 	}
 	
 	public double evaluate(double a) {
 		double sum = 0.0;
-		for (int i=0; i < this.coefficients.length; i++) {
-			sum += this.coefficients[i] * Math.pow(a, i);
+		for (int i=0; i < coefficients.length; i++) {
+			sum += coefficients[i] * Math.pow(a, i);
 		}
 		return sum;
 	}
